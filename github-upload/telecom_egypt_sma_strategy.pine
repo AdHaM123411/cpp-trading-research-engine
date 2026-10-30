@@ -1,0 +1,20 @@
+//@version=6
+strategy("Basic 9/21 SMA Crossover", overlay=true, initial_capital=100000, default_qty_type=strategy.percent_of_equity, default_qty_value=10, pyramiding=0, commission_type=strategy.commission.percent, commission_value=0.1, slippage=1)
+
+// Educational backtest. Fees and slippage are illustrative assumptions.
+// Signals use closed candles; market orders fill on the next available tick.
+fastLength = input.int(9, "Fast SMA length", minval=1)
+slowLength = input.int(21, "Slow SMA length", minval=2)
+fastMA = ta.sma(close, fastLength)
+slowMA = ta.sma(close, slowLength)
+buySignal = ta.crossover(fastMA, slowMA)
+exitSignal = ta.crossunder(fastMA, slowMA)
+
+if barstate.isconfirmed and buySignal
+    strategy.entry("Long", strategy.long)
+if barstate.isconfirmed and exitSignal
+    strategy.close("Long")
+
+plot(fastMA, "Fast SMA", color=color.teal, linewidth=2)
+plot(slowMA, "Slow SMA", color=color.orange, linewidth=2)
+bgcolor(strategy.position_size > 0 ? color.new(color.green, 92) : na, title="In long position")

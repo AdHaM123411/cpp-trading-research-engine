@@ -1,0 +1,19 @@
+[project]
+name = "trading-loop"
+version = "0.1.0"
+description = "Self-learning paper-trading loop: hypothesis -> paper-trade -> measure -> autopsy -> adjust (one variable) -> keep/revert gate -> re-run"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["trading_loop*"]

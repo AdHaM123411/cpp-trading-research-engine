@@ -1,0 +1,22 @@
+{
+  "experiment_id": "egx-sma9-21-hourly-001",
+  "symbols": ["EGX:ABUK", "EGX:FIRE", "EGX:CCAP"],
+  "selection": "Top three in partial October 18–22 weekly price ranking; 173 eligible listings",
+  "fast": 9,
+  "slow": 21,
+  "resolution": "60",
+  "requested_bars": 500,
+  "cutoff_date": "2026-10-22",
+  "initial_cash_egp_per_symbol": 100000,
+  "allocation_fraction": 0.1,
+  "slippage_bps_each_side": 10,
+  "prior_bar_volume_participation": 0.01,
+  "minimum_holding_observed_sessions": 2,
+  "fee_model": "Thndr published standard brokerage + third-party T1/T2 fees; one transaction per fill; current schedule applied throughout for illustration",
+  "fee_source": "https://support.thndr.app/en/articles/638558-thndr-order-fees",
+  "settlement_source": "https://support.thndr.app/en/articles/640388-egx-stock-order-types-market-limit-stop-sell-advanced",
+  "simulation_only": true,
+  "out_of_sample": false,
+  "validation_status": "Not validated: selection hindsight, short sample, corporate actions/calendar/tick grid not independently verified",
+  "parameter_search": "None; one fixed strategy configuration across three symbols"
+}

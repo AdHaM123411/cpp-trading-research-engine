@@ -1,0 +1,22 @@
+[project]
+name = "tear-sheet"
+version = "0.1.0"
+description = "QuantStats performance tear-sheet from a trade log or equity curve"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "quantstats>=0.0.62",
+    "numpy>=1.26",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tearsheet*"]

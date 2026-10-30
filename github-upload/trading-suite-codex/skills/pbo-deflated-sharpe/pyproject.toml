@@ -1,0 +1,19 @@
+[project]
+name = "pbo-deflated-sharpe"
+version = "0.1.0"
+description = "PBO (CSCV) / Deflated Sharpe / Probabilistic Sharpe overfitting checks. numpy + stdlib only."
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pbo_deflated_sharpe*"]
